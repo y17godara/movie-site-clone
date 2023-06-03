@@ -1,2 +1,2 @@
-# disney-clone
+# movie-site-clone
 Vite App React + Tailwind
