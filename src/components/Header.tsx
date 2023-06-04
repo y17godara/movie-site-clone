@@ -1,6 +1,7 @@
 import { useState } from "react";
 import logo from "../assets/images/icons8-movie-100.png";
 
+
 const links = [
   {
     name: "Home",
@@ -23,6 +24,7 @@ const links = [
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
 
+  
   return (
     <>
       <nav className="w-full z-10 bg-[#0c111b] shadow shadow-zinc-800 ease-in-out delay-1000 ">
