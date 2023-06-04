@@ -17,7 +17,8 @@ body,
 }
 body{
     color: #fff;
-    background: #0c111b;
+    background: linear-gradient(135deg, #070707, #202020);
+    
     /* background: #0f1014; */
 }
 

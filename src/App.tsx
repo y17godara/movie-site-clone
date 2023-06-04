@@ -7,7 +7,7 @@ function App() {
       <header className='text-white'>
         <Header />
       </header>
-      <main className="z-0 h-[300vh]">
+      <main className="z-0 h-[300vh] pt-[80px] md:pt-[100px]">
         <section>
           <Slider />
         </section>

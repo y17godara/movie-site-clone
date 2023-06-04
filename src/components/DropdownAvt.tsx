@@ -58,12 +58,13 @@ const DropdownAvatar: React.FC<DropdownAvatarProps> = ({ imgLink }) => {
             </div>
 
             {isOpen && (
-                <div className="absolute right-0 mt-2 bg-[#0c111b] border border-zinc-400 rounded-lg shadow-md">
+                <div className="absolute right-0 mt-2 bg-[#0c111b] border border-zinc-600 rounded-lg shadow-md px-1">
                     <ul className="py-1">
                         {/* Map */}
                         {links.map((link) => (
-                            <li key={link.id} className="px-4 py-2 hover:text-blue-300">
+                            <li key={link.id} className="py-2 hover:text-blue-300 px-8 flex flex-col justify-center items-center">
                                 <a href={link.path}>{link.name}</a>
+                                <hr className='border-t-zinc-600 mt-1 pt-1 w-full'></hr> 
                             </li>
                         ))}
                     </ul>
