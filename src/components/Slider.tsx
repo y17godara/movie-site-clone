@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
 import GlobalApi from "../services/api/GlobalApi";
 
+interface Movie {
+    id: number;
+    title: string;
+    poster_path: string;
+    backdrop_path: string;
+}
+
 
 function Slider() {
-
     // State
-    const [trendingMovies, setTrendingMovies] = useState([]);
-    
+    const [trendingMovies, setTrendingMovies] = useState<Movie[]>([]);
+
     // Fetch Trending Movies API
     useEffect(() => {
         let isMounted = true;
@@ -14,10 +20,13 @@ function Slider() {
             try {
                 const response = await GlobalApi.getTrendingMovies;
                 if (isMounted) {
+                    // Get Data and Slice it
                     const data = response.data.results;
-                    // Console log data
-                    setTrendingMovies(data);
-                    console.log(data);
+                    const slicedData = data.slice(0, 10);
+                    // log data
+                    console.log(slicedData);
+                    // State
+                    setTrendingMovies(slicedData);
                 }
             } catch (error) {
                 console.error(error);
@@ -30,25 +39,21 @@ function Slider() {
         };
 
     }, [])
-    
-    
-    
-        // // Fetch Trending Movies API
-        // useEffect(() => {
-        //     getTrendingMovies();
-        // }, [])
-    
-        // // Fetch Trending Movies API
-        // const getTrendingMovies = () => {
-        //     GlobalApi.getTrendingMovies.then((response) => {
-        //         const data = response.data.results;
-        //         console.log(data);
-        //         console.log('NEXT API');
-        //     })
-        // }
-  return (
-    <div>Slider</div>
-  )
+
+
+    return (
+        <>
+            <div className="flex w-full overflow-x-auto px-16 py-4 scrollbar-none">
+                {trendingMovies.map((movie, index) => (
+
+                    <img key={index} src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+                        className="min-w-full h-[300px] md:h-[460px] object-cover object-left-top md:object-top  mr-5 rounded-md"
+                        alt={movie.title} />
+
+                ))}
+            </div >
+        </>
+    )
 }
 
 export default Slider
