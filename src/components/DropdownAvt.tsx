@@ -32,15 +32,11 @@ const links = [
     },
 ]
 
-
-
 const DropdownAvatar: React.FC<DropdownAvatarProps> = ({ imgLink }) => {
     const [isOpen, setIsOpen] = useState(false);
-
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
-
     return (
         <div className="relative inline-block text-left">
             <div>
@@ -56,7 +52,6 @@ const DropdownAvatar: React.FC<DropdownAvatarProps> = ({ imgLink }) => {
                     />
                 </button>
             </div>
-
             {isOpen && (
                 <div className="absolute right-0 mt-2 bg-[#0c111b] border border-zinc-600 rounded-lg shadow-md px-1">
                     <ul className="py-1">

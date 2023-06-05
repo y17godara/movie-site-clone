@@ -9,7 +9,6 @@ interface Movie {
     backdrop_path: string;
 }
 
-
 function Slider() {
     // State
     const [trendingMovies, setTrendingMovies] = useState<Movie[]>([]);
@@ -61,7 +60,6 @@ function Slider() {
 
     return (
         <>
-     
             <HiChevronLeft 
             onClick={() => slideRight(elementRef.current)}
             className="hidden  md:block cursor-pointer text-white text-[30px] absolute mx-8 mt-[150px] " />
@@ -80,7 +78,6 @@ function Slider() {
 
                 ))}
             </div >
-
         </>
     )
 }
