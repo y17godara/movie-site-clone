@@ -2,6 +2,7 @@ import { useState } from "react";
 import logo from "../assets/images/icons8-movie-100.png";
 import DropdownAvatar from "./DropdownAvt";
 
+
 const links = [
   {
     id: 1,
@@ -27,14 +28,15 @@ const links = [
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
+
   return (
     <>
-      <nav className="fixed w-full z-10 bg-[#0c111b] shadow shadow-zinc-700 ease-in-out delay-1000 ">
+      <nav className="fixed w-full z-10 bg-[--bg-navbar] shadow shadow-zinc-700 ease-in-out delay-1000 ">
         <div className="flex items-center justify-between px-4 mx-auto lg:max-w-7xl md:px-8">
           {/* Logo */}
           <div className="flex items-center justify-between py-3 md:py-5">
             <a href="/" className="text-[20px] font-bold flex items-center justify-between">
-              <img src={logo} className="h-[60px]" />
+              <img src={logo} className="h-[30px]" />
               FilWx
             </a>
           </div>
@@ -56,7 +58,7 @@ export default function NavBar() {
             </div>
             {/* Mobile */}
             <div
-              className={`flex-1 z-50 fixed shad border-r border-zinc-800 bg-[#0c111b] top-0 bottom-0  left-0 px-4 justify-center w-[50%] h-screen md:hidden md:pb-0 md:mt-0 
+              className={`flex-1 z-50 fixed shad border-r border-zinc-800 bg-[--bg-navbar] top-0 bottom-0  left-0 px-4 justify-center w-[50%] h-screen md:hidden md:pb-0 md:mt-0 
             ${navbar ? "block" : "hidden"}`}
             >
               <div className="flex items-center justify-between py-3 md:py-5 md:block">

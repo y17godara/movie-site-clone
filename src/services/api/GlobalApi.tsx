@@ -7,8 +7,13 @@ const APP_API_KEY = API_KEY;
 
 
 // Fetch Trending Movies API
-const getTrendingMovies = axios.get(`${APP_API_URL}/trending/movie/day?api_key=${APP_API_KEY}&language=en-US`);
+const getTrendingMovies = axios.get(`${APP_API_URL}/trending/tv/day?api_key=${APP_API_KEY}&language=en-US`);
+
+// Fetch Trending Series API
+const getTrendingSeries = axios.get(`${APP_API_URL}/trending/tv/day?api_key=${APP_API_KEY}&language=en-US`);
 
 export default {
-    getTrendingMovies
+    getTrendingMovies,
+    getTrendingSeries,
+    
 }

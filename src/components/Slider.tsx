@@ -38,7 +38,7 @@ function Slider() {
             isMounted = false;
         };
 
-    }, [])
+    }, []);
 
 
     // Slider Buttons
@@ -47,33 +47,34 @@ function Slider() {
 
     const slideLeft = (element: HTMLDivElement | null) => {
         if (element) {
-            element.scrollLeft += windowWidth-110;
+            element.scrollLeft += windowWidth - 110;
         }
     };
 
     const slideRight = (element: HTMLDivElement | null) => {
         if (element) {
-            element.scrollLeft -= windowWidth-110;
+            element.scrollLeft -= windowWidth - 110;
         }
     };
 
 
+
     return (
         <>
-            <HiChevronLeft 
-            onClick={() => slideRight(elementRef.current)}
-            className="hidden  md:block cursor-pointer text-white text-[30px] absolute mx-8 mt-[150px] " />
-            <HiChevronRight 
-            onClick={() => slideLeft(elementRef.current)}
-            className="hidden  md:block right-0 cursor-pointer text-white text-[30px] absolute mx-8 mt-[150px] " />
-            
-            <div 
-            ref={elementRef}
-            className="flex w-full overflow-x-auto px-6 md:px-16  py-4 scroll-smooth scrollbar-none">
+            <HiChevronLeft
+                onClick={() => slideRight(elementRef.current)}
+                className="hidden  md:block cursor-pointer text-white text-[30px] absolute mx-8 md:mt-[150px] xl:mt-[275px]" />
+            <HiChevronRight
+                onClick={() => slideLeft(elementRef.current)}
+                className="hidden  md:block right-0 cursor-pointer text-white text-[30px] absolute mx-8 md:mt-[150px] xl:mt-[275px]" />
+
+            <div
+                ref={elementRef}
+                className="flex w-full overflow-x-auto px-2 md:px-16  py-4 scroll-smooth scrollbar-none">
                 {trendingMovies.map((movie, index) => (
 
                     <img key={index} src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-                        className="min-w-full md:h-[310px] object-cover object-left-top mr-5 rounded-md md:hover:border-[2px] border-zinc-600 translate-all duration-75 ease-in-out"
+                        className="min-w-full md:h-[310px] xl:h-[550px] object-cover object-left-top mr-5 rounded-md md:hover:border-[2px] border-zinc-600 translate-all duration-75 ease-in-out"
                         alt={movie.title} />
 
                 ))}
