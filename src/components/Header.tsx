@@ -31,7 +31,7 @@ export default function NavBar() {
 
   return (
     <>
-      <nav className="fixed w-full z-10 bg-[--bg-navbar] shadow shadow-zinc-700 ease-in-out delay-1000 ">
+      <nav className="fixed w-full z-10 bg-[--bg-navbar] shadow shadow-zinc-700 ease-in-out delay-1000 py-2">
         <div className="flex items-center justify-between px-4 mx-auto lg:max-w-7xl md:px-8">
           {/* Logo */}
           <div className="flex items-center justify-between py-3 md:py-5">
