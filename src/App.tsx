@@ -1,4 +1,5 @@
 import Header from './components/Header'
+import Footer from './components/Footer'
 import Slider from './components/Slider'
 import Content from './components/MiniSwipper'
 import Page from './Page'
@@ -10,7 +11,7 @@ function App() {
       <header className='text-white'>
         <Header />
       </header>
-      <main className="z-0 h-[300vh] pt-[80px] md:pt-[100px]">
+      <main className="flex flex-col gap-2 md:gap-6 xl:gap-10 z-0 h-full pt-[80px] md:pt-[100px] px-4 md:px-8 xd:px-16">
         <section>
           <Slider />
         </section>
@@ -21,6 +22,10 @@ function App() {
           <Page />
         </section>
       </main>
+
+      <footer className='flex flex-col mt-10'>
+       <Footer />
+      </footer>
     </>
   );
 }

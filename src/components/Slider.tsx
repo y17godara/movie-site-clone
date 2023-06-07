@@ -30,7 +30,7 @@ function Slider() {
                     // Get Data and Slice it
                     const data = response.data.results;
                     const slicedData = data.slice(0, 10);
-                    console.log(slicedData);
+                    // console.log(slicedData);
                     setTrending(slicedData);
                 }
             } catch (error) {
