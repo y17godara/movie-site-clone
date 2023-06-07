@@ -1,6 +1,6 @@
 import Header from './components/Header'
 import Slider from './components/Slider'
-import Content from './components/Recom'
+import Content from './components/MiniSwipper'
 import Page from './Page'
 
 function App() {

@@ -13,6 +13,7 @@ interface Trending {
     poster_path: string;
     backdrop_path: string;
     vote_average: number;
+    overview: string;
 }
 
 function Slider() {
@@ -74,15 +75,14 @@ function Slider() {
                             backgroundPosition: "center",
                         }}
                     >
-                        <div className="flex flex-col text-transparent hover:text-white text-xl font-bold w-full h-full bg-opacity-0 hover:bg-opacity-95 hover:backdrop-filter hover:backdrop-blur transition duration-300 items-center justify-center">
-                            {data.title ? data.title : data.name}
-                            <span>Rating: {data.vote_average}</span>
+                        <div className="flex flex-col min-h-[300px] md:h-[310px] xl:h-[550px] text-transparent hover:text-white text-xl font-bold w-full h-full bg-opacity-0 hover:bg-opacity-95 hover:backdrop-filter hover:backdrop-blur transition duration-300 items-center justify-center">
+                            <h3 className="text-3xl">{data.title ? data.title : data.name}</h3>
+                            <p className="underline bold">Rating: {data.vote_average}</p>
+                            <p className="max-w-[768px] mx-auto" >{data.overview}</p>
                         </div>
                     </SwiperSlide>
                 ))}
             </Swiper>
-
-            
         </>
     )
 }
