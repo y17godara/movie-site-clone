@@ -7,9 +7,11 @@ interface Upcoming {
   title: string;
   poster_path: string;
   backdrop_path: string;
+  release_date: string;
+  vote_average: number;
 }
 
-function Upcoming() {
+function Content() {
   // State
   const [upcoming, setUpcoming] = useState<Upcoming[]>([]);
 
@@ -69,7 +71,7 @@ function Upcoming() {
         <div className="flex px-2 gap-2 md:gap-4 flex-row md:pl-16 md:pr-4 xl:h-[250px]">
           <div className="flex items-center justify-center text-center md:p-4 font-bold text-xl">
             <h2 className="border border-zinc-500">
-              Upcoming Movies
+              Recommeded For You
             </h2>
           </div>
           {/* Slider */}
@@ -84,8 +86,10 @@ function Upcoming() {
                   backgroundPosition: 'center',
                 }}
               >
-                <div className="text-transparent hover:text-white text-xl font-bold w-full h-full bg-opacity-0 hover:bg-opacity-75 hover:backdrop-filter hover:backdrop-blur transition duration-300 flex items-center justify-center">
+                <div className="flex-col text-transparent hover:text-white text-xl font-bold w-full h-full bg-opacity-0 hover:bg-opacity-75 hover:backdrop-filter hover:backdrop-blur transition duration-300 flex items-center justify-center">
                   {data.title}
+                  <span>{data.release_date}</span>
+                  <span>Rating: {data.vote_average}</span>
                 </div>
               </div>
             ))}
@@ -98,4 +102,4 @@ function Upcoming() {
   )
 }
 
-export default Upcoming;
+export default Content;

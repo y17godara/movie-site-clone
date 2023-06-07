@@ -1,6 +1,6 @@
 import Header from './components/Header'
 import Slider from './components/Slider'
-import Upcoming from './components/Upcoming'
+import Content from './components/Content'
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
           <Slider />
         </section>
         <section>
-          <Upcoming />
+          <Content />
         </section>
         <section>
           Main
