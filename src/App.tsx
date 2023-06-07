@@ -1,7 +1,7 @@
 import Header from './components/Header'
 import Slider from './components/Slider'
-import Content from './components/Content'
-
+import Content from './components/Recom'
+import Page from './Page'
 
 function App() {
 
@@ -18,7 +18,7 @@ function App() {
           <Content />
         </section>
         <section>
-          Main
+          <Page />
         </section>
       </main>
     </>
