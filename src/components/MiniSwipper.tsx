@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import GlobalApi from "../services/api/GlobalApi";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
-interface Upcoming {
+interface MiniSwipperProps {
   id: number;
   title: string;
   poster_path: string;
@@ -11,9 +11,9 @@ interface Upcoming {
   vote_average: number;
 }
 
-function Content() {
+function MiniSwipper() {
   // State
-  const [upcoming, setUpcoming] = useState<Upcoming[]>([]);
+  const [upcoming, setUpcoming] = useState<MiniSwipperProps[]>([]);
 
   // Upcoming API
   useEffect(() => {
@@ -24,7 +24,7 @@ function Content() {
         if (isMounted) {
           // Get Data and Slice it
           const data = response.data.results;
-          console.log(data);
+          // console.log(data);
           setUpcoming(data);
         }
       } catch (error) {
@@ -94,12 +94,10 @@ function Content() {
               </div>
             ))}
           </div>
-
-
         </div>
       </div>
     </>
   )
 }
 
-export default Content;
+export default MiniSwipper;
